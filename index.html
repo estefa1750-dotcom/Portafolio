@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portafolio profesional de Estefania Chaverra">
+
+    <title>Estefania Chaverra | Portafolio Profesional</title>
+
+    <!-- Biblioteca para generar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #008f68;
+            color: #263445;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #064e3b, #008f68);
+            color: white;
+            padding: 65px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 21px;
+            font-weight: 400;
+            color: #e1bd78;
+        }
+
+        header p {
+            margin-top: 15px;
+            color: #e4eaf1;
+        }
+
+        nav {
+            background: white;
+            padding: 17px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #006b50;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #b58a45;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+        }
+
+        section h2 {
+            color: #006b50;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #d4ad68;
+            padding-bottom: 10px;
+        }
+
+        .profile {
+            text-align: justify;
+        }
+
+        .profile p {
+            margin-bottom: 15px;
+        }
+
+        .experience {
+            border-left: 4px solid #d4ad68;
+            padding-left: 20px;
+        }
+
+        .experience h3 {
+            color: #006b50;
+        }
+
+        .experience p {
+            margin-top: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #d9f3e9;
+            color: #006b50;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact a {
+            display: inline-block;
+            background: #008f68;
+            color: white;
+            padding: 12px 25px;
+            margin-top: 15px;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .contact a:hover {
+            background: #b58a45;
+        }
+
+        /* BOTON DE DESCARGA PDF */
+        .download-container {
+            text-align: center;
+            padding: 25px 15px 40px;
+        }
+
+        .download-btn {
+            background: #064e3b;
+            color: white;
+            border: 2px solid #e1bd78;
+            padding: 15px 30px;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #b58a45;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: #064e3b;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 22px;
+            }
+        }
+
+        /* ESTILOS PARA IMPRESION PDF */
+        @media print {
+            body {
+                background: white;
+            }
+
+            nav, .download-container {
+                display: none !important;
+            }
+
+            .container {
+                margin: 15px auto;
+            }
+
+            section {
+                box-shadow: none;
+                border: 1px solid #eeeeee;
+                break-inside: avoid;
+            }
+
+            header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONTENIDO DEL PORTAFOLIO -->
+    <div id="portafolio">
+
+        <header>
+            <h1>Estefania Chaverra</h1>
+            <h2>Administración Tecnológica</h2>
+            <p>Estudiante de octavo semestre | ITM - Medellín</p>
+        </header>
+
+        <main class="container">
+
+            <!-- PERFIL PROFESIONAL -->
+            <section id="perfil" class="profile">
+                <h2>Perfil Profesional</h2>
+
+                <p>
+                    Estudiante de octavo semestre de Administración
+                    Tecnológica en la Institución Universitaria ITM.
+                    Cuento con experiencia laboral en el área de Talento
+                    Humano como Analista de Talento Humano en Grupo Éxito.
+                </p>
+
+                <p>
+                    Es un ciudadano global que cuenta con formación
+                    integral, con cualidades éticas y de autonomía para
+                    su desarrollo profesional, con capacidad para
+                    planear, organizar, dirigir, controlar y evaluar los
+                    procesos de gestión del conocimiento, tecnología e
+                    innovación, alineándolos con la estrategia para el
+                    logro de los objetivos de las organizaciones en las
+                    que interviene, lo cual le permite tomar decisiones
+                    en contextos complejos, dinámicos e inciertos.
+                </p>
+            </section>
+
+            <!-- FORMACION ACADEMICA -->
+            <section id="formacion">
+                <h2>Formación Académica</h2>
+
+                <div class="experience">
+                    <h3>Administración Tecnológica</h3>
+
+                    <p><strong>Institución:</strong>
+                    Institución Universitaria ITM</p>
+
+                    <p><strong>Estado:</strong> En formación</p>
+
+                    <p><strong>Semestre:</strong> Octavo semestre</p>
+
+                    <p><strong>Ubicación:</strong>
+                    Medellín, Colombia</p>
+                </div>
+            </section>
+
+            <!-- EXPERIENCIA LABORAL -->
+            <section id="experiencia">
+                <h2>Experiencia Laboral</h2>
+
+                <div class="experience">
+                    <h3>Analista de Talento Humano</h3>
+
+                    <p><strong>Empresa:</strong> Grupo Éxito</p>
+
+                    <p>
+                        Experiencia en el área de Talento Humano.
+                        Participación en procesos relacionados con la
+                        gestión del talento humano y el funcionamiento
+                        organizacional.
+                    </p>
+                </div>
+            </section>
+
+            <!-- AREAS DE INTERES -->
+            <section>
+                <h2>Áreas de Interés Profesional</h2>
+
+                <span class="tag">Gestión Administrativa</span>
+                <span class="tag">Talento Humano</span>
+                <span class="tag">Administración Tecnológica</span>
+                <span class="tag">Gestión Organizacional</span>
+                <span class="tag">Desarrollo Empresarial</span>
+                <span class="tag">Gestión del Conocimiento</span>
+                <span class="tag">Tecnología e Innovación</span>
+            </section>
+
+            <!-- CONTACTO -->
+            <section id="contacto" class="contact">
+                <h2>Contacto</h2>
+
+                <p>¿Deseas conocer más sobre mi perfil profesional?</p>
+
+                <p>
+                    <strong>Correo electrónico:</strong>
+                    estefa1750@gmail.com
+                </p>
+
+                <a href="mailto:estefa1750@gmail.com">
+                    Enviar un correo
+                </a>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>© 2026 Estefania Chaverra | Portafolio Profesional</p>
+            <p>Administración Tecnológica - ITM</p>
+        </footer>
+
+    </div>
+
+    <!-- BOTON DESCARGAR PDF -->
+    <div class="download-container">
+        <button class="download-btn" onclick="descargarPDF()">
+            📄 Descargar portafolio en PDF
+        </button>
+    </div>
+
+    <!-- FUNCION PARA GENERAR EL PDF -->
+    <script>
+        function descargarPDF() {
+
+            const elemento = document.getElementById('portafolio');
+
+            const opciones = {
+                margin: 10,
+                filename: 'Portafolio_Estefania_Chaverra.pdf',
+
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: '#ffffff'
+                },
+
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
+                    orientation: 'portrait'
+                },
+
+                pagebreak: {
+                    mode: ['css', 'legacy']
+                }
+            };
+
+            html2pdf()
+                .set(opciones)
+                .from(elemento)
+                .save();
+        }
+    </script>
+
+</body>
+</html>
